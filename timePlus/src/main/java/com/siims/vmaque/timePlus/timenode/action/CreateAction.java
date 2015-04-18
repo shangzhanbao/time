@@ -14,4 +14,13 @@ public class CreateAction extends StrutsAction{
 		String content = request.getParameter("content");
 		nodeId = ServiceContext.get(NodeService.class).create(axisId, name, content);
 	}
+
+	public String getNodeId() {
+		return nodeId;
+	}
+
+	public void setNodeId(String nodeId) {
+		this.nodeId = nodeId;
+	}
+	
 }

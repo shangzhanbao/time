@@ -5,11 +5,10 @@ import com.siims.framework.mvc.struts.StrutsAction;
 import com.siims.vmaque.timePlus.timenode.service.NodeService;
 
 public class DeleteAction extends StrutsAction{
-
-	private String axisId;
-	private String id;
 	
 	public void delete() {
+		String axisId = request.getParameter("axisId");
+		String id = request.getParameter("id");
 		ServiceContext.get(NodeService.class).delete(axisId, id);
 	}
 }

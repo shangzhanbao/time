@@ -65,7 +65,7 @@ public class Picture implements BaseData{
 	 */
 	@Column(name="T_UPLOAD_TIME")
 	private Date time;
-		
+			
 	public Date getTime() {
 		return time;
 	}
@@ -76,6 +76,13 @@ public class Picture implements BaseData{
 
 	public Picture() {
 		// TODO Auto-generated constructor stub
+	}
+	
+	public Picture(String url, String desc) {
+		super();
+		this.url = url;
+		this.desc = desc;
+		this.time = new Date();
 	}
 
 	@Override

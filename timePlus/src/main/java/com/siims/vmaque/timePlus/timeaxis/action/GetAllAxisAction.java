@@ -12,16 +12,11 @@ import com.siims.vmaque.timePlus.timeaxis.service.AxisService;
 import com.siims.vmaque.timePlus.util.AxisSorter;
 
 public class GetAllAxisAction extends StrutsAction{
-
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1223451515L;
 	
 	private List<AxisInfo> infos = new ArrayList<AxisInfo>();
-	private String userId;
 	
 	public void getAllAxis() {
+		String userId = request.getParameter("userId");
 		List<Axis> axis =  ServiceContext.get(AxisService.class).getAllAxis(userId);
 		Collections.sort(axis, new AxisSorter());
 		for (int i = 0; i < axis.size(); i++) {
@@ -29,6 +24,15 @@ public class GetAllAxisAction extends StrutsAction{
 			infos.add(info);
 		}
 	}
+
+	public List<AxisInfo> getInfos() {
+		return infos;
+	}
+
+	public void setInfos(List<AxisInfo> infos) {
+		this.infos = infos;
+	}
+	
 }
 
 

@@ -29,7 +29,7 @@ public class CommentPersistenceImpl implements CommentPersistence{
 		Node node = ServiceContext.get(NodeService.class).getNodeById(nodeId);
 		node.getComments().add(comment);
 		hibernatedao.update(null, node);
-		return null;
+		return comment.getId();
 	}
 
 	@Override

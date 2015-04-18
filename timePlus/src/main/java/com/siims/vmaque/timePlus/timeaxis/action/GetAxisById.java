@@ -6,12 +6,20 @@ import com.siims.vmaque.timePlus.timeaxis.data.Axis;
 import com.siims.vmaque.timePlus.timeaxis.service.AxisService;
 
 public class GetAxisById extends StrutsAction{
-		
-	private String id;
-	
+			
 	private Axis axis;
 	
 	public void getAxisById() {
+		String id = request.getParameter("id");
 		axis = ServiceContext.get(AxisService.class).getAxisById(id);
 	}
+
+	public Axis getAxis() {
+		return axis;
+	}
+
+	public void setAxis(Axis axis) {
+		this.axis = axis;
+	}
+	
 }

@@ -5,12 +5,9 @@ import com.siims.framework.mvc.struts.StrutsAction;
 import com.siims.vmaque.timePlus.timeaxis.service.AxisService;
 
 public class DeleteAction extends StrutsAction{
-	
-	private static final long serialVersionUID = 1212122221L;
-	
-	private String id;
-	
+		
 	public void delete() {
+		String id = request.getParameter("id");
 		ServiceContext.get(AxisService.class).deleteAxis(id);
 	}
 

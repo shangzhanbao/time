@@ -5,10 +5,9 @@ import com.siims.framework.mvc.struts.StrutsAction;
 import com.siims.vmaque.timePlus.timeaxis.service.AxisService;
 
 public class PraiseAction extends StrutsAction{
-	
-	private String id;
-	
+		
 	public void praise() {
+		String id = request.getParameter("id");
 		ServiceContext.get(AxisService.class).praiseAxis(id);
 	}
 
