@@ -3,12 +3,14 @@ package com.siims.vmaque.timePlus.timecomment.service.impl;
 import com.google.inject.Singleton;
 import com.siims.framework.ioc.ServiceContext;
 import com.siims.framework.ioc.guice.annotation.AutoBind;
+import com.siims.framework.transaction.TransactionalContext;
 import com.siims.vmaque.timePlus.timecomment.business.CommentBusiness;
 import com.siims.vmaque.timePlus.timecomment.data.Comment;
 import com.siims.vmaque.timePlus.timecomment.service.CommentService;
 
 @Singleton
 @AutoBind(bindClass=CommentService.class)
+@TransactionalContext
 public class CommentServiceImpl implements CommentService {
 
 	@Override

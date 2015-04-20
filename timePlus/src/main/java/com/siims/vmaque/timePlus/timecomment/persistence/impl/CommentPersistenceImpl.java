@@ -35,7 +35,7 @@ public class CommentPersistenceImpl implements CommentPersistence{
 	@Override
 	public Comment getCommentById(String id) {
 		// TODO Auto-generated method stub
-		return (Comment) hibernatedao.queryData("from Comment c where c.id = "+id, null);
+		return (Comment) hibernatedao.queryData("from Comment c where c.id = "+id, Comment.class);
 	}
 
 }

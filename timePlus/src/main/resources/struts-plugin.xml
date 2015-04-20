@@ -3,7 +3,7 @@
 	"http://struts.apache.org/dtds/struts-2.1.dtd">
 <struts>
 
-	<constant name="struts.i18n.encoding" value="UTF_8"/>
+	<constant name="struts.i18n.encoding" value="UTF-8"/>
 	
 	<package name="siims.vmaque.timePlus.test" namespace="/siims/vmaque/timePlus/test" extends="siims.framework.default">
 		<action name="test" class="com.siims.vmaque.timePlus.self.action.TestAction" method="test">
@@ -17,9 +17,9 @@
 		</action>
 	</package>
 	
-	<package name="siim.vmaque.timePlus.Axis" namespace="/siim/vmaque/timePlus/axis" extends="siim.framework.default">
+	<package name="siims.vmaque.timePlus.Axis" namespace="/siims/vmaque/timePlus/axis" extends="siims.framework.default">
 		<action name="create" class="com.siims.vmaque.timePlus.timeaxis.action.CreateAction" method="create">
-			<result name="success" type="freemaker">/ui/ftl/axis/create.ftl</result>
+			<result name="success" type="freemarker">/ui/ftl/axis/create.ftl</result>
 		</action>
 		<action name="delete" class="com.siims.vmaque.timePlus.timeaxis.action.DeleteAction" method="delete">
 			<result type="json">
@@ -40,10 +40,7 @@
 			</result>
 		</action>
 		<action name="praise" class="com.siims.vmaque.timePlus.timeaxis.action.PraiseAction" method="praise">
-			<result type="json">
-				<param name="noCache">true</param>
-				<param name="contentType">text/html</param>
-			</result>
+			
 		</action>
 		<action name="getAxisById" class="com.siims.vmaque.timePlus.timeaxis.action.GetAxisByIdAction" method="getAxisById">
 			<result type="json">
@@ -53,7 +50,7 @@
 		</action>
 	</package>
 	
-	<package name="siim.vmaque.timePlus.Node" namespace="/siim/vmaque/timePlus/node" extends="siim.framework.default">
+	<package name="siims.vmaque.timePlus.Node" namespace="/siims/vmaque/timePlus/node" extends="siims.framework.default">
 		<action name="create" class="com.siims.vmaque.timePlus.timenode.action.CreateAction" method="create">
 			<result type="json">
 				<param name="noCache">true</param>
@@ -69,7 +66,7 @@
 		</action>
 	</package>
 	
-	<package name="siim.vmaque.timePlus.Comment" namespace="/siim/vmaque/timePlus/comment" extends="siim.framework.default">
+	<package name="siims.vmaque.timePlus.Comment" namespace="/siims/vmaque/timePlus/comment" extends="siims.framework.default">
 		<action name="create" class="com.siims.vmaque.timePlus.timecomment.action.CreateAction" method="create">
 			<result type="json">
 				<param name="noCache">true</param>
@@ -78,7 +75,7 @@
 		</action>
 	</package>
 	
-	<package name="siim.vmaque.timePlus.Upload" namespace="/siim/vmaque/timePlus/upload" extends="siim.framework.default">
+	<package name="siims.vmaque.timePlus.Upload" namespace="/siims/vmaque/timePlus/upload" extends="siims.framework.default">
 		<action name="uploadImage" class="com.siims.vmaque.timePlus.util.UploadImgAction" method="uploadImage">
 			<result type="json">
 				<param name="noCache">true</param>

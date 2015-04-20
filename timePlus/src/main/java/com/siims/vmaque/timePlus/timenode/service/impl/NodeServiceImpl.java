@@ -3,12 +3,14 @@ package com.siims.vmaque.timePlus.timenode.service.impl;
 import com.google.inject.Singleton;
 import com.siims.framework.ioc.ServiceContext;
 import com.siims.framework.ioc.guice.annotation.AutoBind;
+import com.siims.framework.transaction.TransactionalContext;
 import com.siims.vmaque.timePlus.timenode.business.NodeBusiness;
 import com.siims.vmaque.timePlus.timenode.data.Node;
 import com.siims.vmaque.timePlus.timenode.service.NodeService;
 
 @Singleton
 @AutoBind(bindClass=NodeService.class)
+@TransactionalContext
 public class NodeServiceImpl implements NodeService{
 
 	@Override

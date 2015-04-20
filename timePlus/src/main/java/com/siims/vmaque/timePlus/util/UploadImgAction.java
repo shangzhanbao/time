@@ -95,9 +95,9 @@ public class UploadImgAction extends StrutsAction {
                 fos.write(buffer, 0, len);
             }
             //判断是否进行截图操作
-            if(cut){
-                CutImgUtil.cut(filePath+newFileName, top < 0 ? 0 : top, left < 0 ? 0 : left, width, height);
-            }
+//            if(cut){
+//                CutImgUtil.cut(filePath+newFileName, top < 0 ? 0 : top, left < 0 ? 0 : left, width, height);
+//            }
         } catch (Exception e) {
         	try {
                 response.getWriter().write("1");
@@ -112,13 +112,13 @@ public class UploadImgAction extends StrutsAction {
         }
         try{
 	        double daxiao = Double.parseDouble(String.format("%.1f", uploadImg.length() / 1024.0)); // 获取上传图片大小
-	        if (daxiao >= 1000) { // 图片大小超过400kb开始转换格式 压缩
-	            ImageCompress.imageCompress(filePath, newFileName, newFileName, 0.2f);
-	        } else if (daxiao >= 500 && daxiao < 1000){
-	            ImageCompress.imageCompress(filePath, newFileName, newFileName, 0.3f);
-	        } else if (daxiao >= 400 && daxiao < 500){
-	            ImageCompress.imageCompress(filePath, newFileName, newFileName, 0.4f);
-	        }
+//	        if (daxiao >= 1000) { // 图片大小超过400kb开始转换格式 压缩
+//	            ImageCompress.imageCompress(filePath, newFileName, newFileName, 0.2f);
+//	        } else if (daxiao >= 500 && daxiao < 1000){
+//	            ImageCompress.imageCompress(filePath, newFileName, newFileName, 0.3f);
+//	        } else if (daxiao >= 400 && daxiao < 500){
+//	            ImageCompress.imageCompress(filePath, newFileName, newFileName, 0.4f);
+//	        }
 	        // 写入上传的图片
 	        try {
 				response.getWriter().write("/uploadImg" + "/" + year + "/" + month + "/"  + day + "/" + newFileName);

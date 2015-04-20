@@ -9,12 +9,6 @@ public class AxisSorter implements Comparator<Axis>  {
 	@Override
 	public int compare(Axis o1, Axis o2) {
 		// TODO Auto-generated method stub
-		if (o1.getTime().after(o2.getTime())) {
-			return -1;
-		}else if (o1.getTime().before(o2.getTime())) {
-			return 1;
-		}else {
-			return 0;
-		}
+		return -1;
 	}
 }

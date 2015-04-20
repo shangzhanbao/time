@@ -5,12 +5,14 @@ import java.util.List;
 import com.google.inject.Singleton;
 import com.siims.framework.ioc.ServiceContext;
 import com.siims.framework.ioc.guice.annotation.AutoBind;
+import com.siims.framework.transaction.TransactionalContext;
 import com.siims.vmaque.timePlus.timeaxis.business.AxisBusiness;
 import com.siims.vmaque.timePlus.timeaxis.data.Axis;
 import com.siims.vmaque.timePlus.timeaxis.service.AxisService;
 
 @Singleton
 @AutoBind(bindClass=AxisService.class)
+@TransactionalContext
 public class AxisServiceImpl implements AxisService {
 
 	@Override
@@ -40,7 +42,7 @@ public class AxisServiceImpl implements AxisService {
 	@Override
 	public void praiseAxis(String id) {
 		// TODO Auto-generated method stub
-		ServiceContext.get(AxisBusiness.class).praiseAxis(id);
+		ServiceContext.get(AxisBusiness.class).praiseAxis(id);;
 	}
 
 	@Override

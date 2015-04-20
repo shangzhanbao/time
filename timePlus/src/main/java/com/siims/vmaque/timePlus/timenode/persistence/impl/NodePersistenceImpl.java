@@ -41,12 +41,13 @@ public class NodePersistenceImpl implements NodePersistence {
 		if (axis.getNodes().contains(node)) {
 			axis.getNodes().remove(node);
 		}
+		hibernatedao.update(null, axis);
 	}
 
 	@Override
 	public Node getNodeById(String id) {
 		// TODO Auto-generated method stub
-		return (Node) hibernatedao.queryData("from Node n where n.id = "+id, null);
+		return (Node) hibernatedao.queryData("from Node n where n.id = "+id, Node.class);
 	}
 
 }

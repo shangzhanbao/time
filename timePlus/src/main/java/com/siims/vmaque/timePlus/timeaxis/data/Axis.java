@@ -30,14 +30,7 @@ import com.siims.vmaque.timePlus.timenode.data.Node;
 @Entity
 @Table(name="TIME_AXIS")
 public class Axis implements BaseData{
-
-	/**
-	 * SerialVersionUID
-	 * @since vmaque2.1
-	 */
-	private static final long serialVersionUID = 121231234155L;
-	
-	
+		
 	/**
 	 * 描述：主键id<br>
 	 * 类型：varchar2(32)<br>

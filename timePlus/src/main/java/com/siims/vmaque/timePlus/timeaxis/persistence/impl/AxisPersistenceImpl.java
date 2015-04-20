@@ -33,14 +33,15 @@ public class AxisPersistenceImpl implements AxisPersistence{
 	@Override
 	public void deleteAxis(String id) {
 		// TODO Auto-generated method stub
-		Axis axis = (Axis) hibernatedao.queryData("from Axis a where a.id = "+id, null);
+		Axis axis = new Axis();
+		axis.setId(id);
 		hibernatedao.delete(null, axis);
 	}
 
 	@Override
 	public void publishAxis(String id) {
 		// TODO Auto-generated method stub
-		Axis axis = (Axis)hibernatedao.queryData("from Axis a where a.id = "+id, null);
+		Axis axis = (Axis)hibernatedao.queryData(id, Axis.class);
 		axis.setIsPublished("1");
 		hibernatedao.update(null, axis);
 	}
@@ -48,35 +49,38 @@ public class AxisPersistenceImpl implements AxisPersistence{
 	@Override
 	public List<Axis> getAllAxis(String userId) {
 		// TODO Auto-generated method stub
-		List<Axis> list = hibernatedao.queryList("from Axis a where a.userId " +userId ,null);
+		List<Axis> list = hibernatedao.queryList("from Axis a where a.userId " +userId ,Axis.class);
 		return list;
 	}
 
 	@Override
 	public void praiseAxis(String id) {
 		// TODO Auto-generated method stub
-		Axis axis = (Axis) hibernatedao.queryData("from Axis a where a.id = "+id, null);
-		axis.setPraiseNum(axis.getPraiseNum()+1);
+		Axis axis = new Axis("lgm", "lgm", "12123");
+		axis.setId(id);
+		axis.setPraiseNum(12);
 		hibernatedao.update(null, axis);
 	}
 
 	@Override
 	public String getAxisComputerUrl(String userId) {
 		// TODO Auto-generated method stub
-		Axis axis = (Axis)hibernatedao.queryData("from Axis a where a.id = "+userId, null);
+		Axis axis = (Axis)hibernatedao.queryData(userId, Axis.class);
 		return axis.getUrlComputer();
 	}
 
 	@Override
 	public String getAxisPhoneUrl(String userId) {
 		// TODO Auto-generated method stub
-		Axis axis = (Axis)hibernatedao.queryData("from Axis a where a.id = "+userId, null);
+		Axis axis = (Axis)hibernatedao.queryData(userId, Axis.class);
 		return axis.getUrlPhone();
 	}
 
 	@Override
 	public Axis getAxisById(String id) {
 		// TODO Auto-generated method stub
-		return (Axis) hibernatedao.queryData("from Axis a where a.id = "+id, null);
+		Axis axis = (Axis) hibernatedao.queryData(id, Axis.class);
+		System.out.println(axis.getName());
+		return axis;
 	}
 }

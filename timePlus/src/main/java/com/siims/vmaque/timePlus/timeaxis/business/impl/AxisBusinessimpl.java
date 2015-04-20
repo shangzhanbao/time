@@ -16,43 +16,43 @@ public class AxisBusinessimpl implements AxisBusiness {
 	@Override
 	public String createAxis(String name, String advertisement, String userId) {
 		// TODO Auto-generated method stub
-		return ServiceContext.get(AxisBusiness.class).createAxis(name, advertisement, userId);
+		return ServiceContext.get(AxisPersistence.class).createAxis(name, advertisement, userId);
 	}
 
 	@Override
 	public void deleteAxis(String id) {
 		// TODO Auto-generated method stub
-		ServiceContext.get(AxisBusiness.class).deleteAxis(id);
+		ServiceContext.get(AxisPersistence.class).deleteAxis(id);
 	}
 
 	@Override
 	public void publishAxis(String id) {
 		// TODO Auto-generated method stub
-		ServiceContext.get(AxisBusiness.class).publishAxis(id);
+		ServiceContext.get(AxisPersistence.class).publishAxis(id);
 	}
 
 	@Override
 	public List<Axis> getAllAxis(String userId) {
 		// TODO Auto-generated method stub
-		return ServiceContext.get(AxisBusiness.class).getAllAxis(userId);
+		return ServiceContext.get(AxisPersistence.class).getAllAxis(userId);
 	}
 
 	@Override
 	public void praiseAxis(String id) {
 		// TODO Auto-generated method stub
-		ServiceContext.get(AxisBusiness.class).praiseAxis(id);
+		ServiceContext.get(AxisPersistence.class).praiseAxis(id);
 	}
 
 	@Override
 	public String getAxisComputerUrl(String userId) {
 		// TODO Auto-generated method stub
-		return ServiceContext.get(AxisBusiness.class).getAxisComputerUrl(userId);
+		return ServiceContext.get(AxisPersistence.class).getAxisComputerUrl(userId);
 	}
 
 	@Override
 	public String getAxisPhoneUrl(String userId) {
 		// TODO Auto-generated method stub
-		return ServiceContext.get(AxisBusiness.class).getAxisPhoneUrl(userId);
+		return ServiceContext.get(AxisPersistence.class).getAxisPhoneUrl(userId);
 	}
 	
 	public Axis getAxisById(String id) {
